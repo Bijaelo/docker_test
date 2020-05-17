@@ -1,0 +1,5 @@
+FROM python:latest
+
+COPY package package/
+RUN cd package && python setup.py install
+RUN python -m 'import my_package; mypackage.myfun()'
